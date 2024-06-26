@@ -1,5 +1,6 @@
 <script setup>
 import myHeader from "./components/Header.vue";
+import myFooter from "./components/Footer.vue";
 import { ref } from "vue";
 
 const currentTheme = ref("light");
@@ -14,6 +15,7 @@ function toggleTheme() {
     <div class="max-w-custom mx-auto h-screen">
       <myHeader :onToggleTheme="toggleTheme" :vestadoico="currentTheme" />
       <RouterView />
+      <myFooter />
     </div>
   </main>
 </template>

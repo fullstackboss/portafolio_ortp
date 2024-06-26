@@ -38,7 +38,10 @@ onUnmounted(() => {
       class="col-span-12 block p-4 sm:block md:hidden lg:hidden border-b border-gray-300 menu-container"
     >
       <div class="grid grid-cols-12 gap-1">
-        <div class="col-span-2 flex items-center" @click="toggleMenu">
+        <div
+          class="col-span-2 flex items-center cursor-pointer"
+          @click="toggleMenu"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="h-5 w-5"
@@ -172,8 +175,8 @@ onUnmounted(() => {
         >
           <div class="h-80 bg-neo-fondo-dark flex items-end p-4">
             <img
-              class="w-60 h-60 object-cover"
-              src="https://shorturl.at/Fokd1"
+              class="w-60 h-64 object-cover"
+              src="../assets/images/ortp.jpeg"
               alt=""
             />
           </div>
