@@ -1,6 +1,6 @@
 <script setup>
 import "boxicons";
-import { ref } from "vue";
+import { ref, onMounted, onUnmounted } from "vue";
 import { defineProps } from "vue";
 
 const props = defineProps({
@@ -10,16 +10,32 @@ const props = defineProps({
 
 const menuVisible = ref(false);
 
+// Función para alternar la visibilidad del menú
 const toggleMenu = () => {
   menuVisible.value = !menuVisible.value;
 };
+
+// Función para cerrar el menú si se hace clic fuera de él
+const closeMenu = (event) => {
+  if (!event.target.closest(".menu-container") && menuVisible.value) {
+    menuVisible.value = false;
+  }
+};
+
+// Añadir y remover el event listener para cerrar el menú al hacer clic fuera de él
+onMounted(() => {
+  document.addEventListener("click", closeMenu);
+});
+onUnmounted(() => {
+  document.removeEventListener("click", closeMenu);
+});
 </script>
 
 <template>
   <div class="grid grid-cols-12 gap-0 mb-5">
     <!-- menu movil -->
     <div
-      class="col-span-12 block p-4 sm:block md:hidden lg:hidden border-b border-gray-300"
+      class="col-span-12 block p-4 sm:block md:hidden lg:hidden border-b border-gray-300 menu-container"
     >
       <div class="grid grid-cols-12 gap-1">
         <div class="col-span-2 flex items-center" @click="toggleMenu">
@@ -61,28 +77,29 @@ const toggleMenu = () => {
       >
         <ul>
           <li
-            class="border-b border-gray-300 hover:bg-zinc-900 hover:text-zinc-100 py-2 px-4"
+            class="border-b border-gray-300 hover:bg-zinc-900 hover:text-zinc-100 py-0 px-4"
           >
-            <RouterLink to="/">
+            <RouterLink to="/" class="block py-2">
               <span class="text-md">Inicio</span>
             </RouterLink>
           </li>
+
           <li
-            class="border-b border-gray-300 py-2 px-4 hover:bg-zinc-900 hover:text-zinc-100"
+            class="border-b border-gray-300 py-0 px-4 hover:bg-zinc-900 hover:text-zinc-100"
           >
-            <RouterLink to="/acerca">
+            <RouterLink to="/acerca" class="block py-2">
               <span class="text-md">Acerca</span>
             </RouterLink>
           </li>
           <li
-            class="border-b border-gray-300 py-2 px-4 hover:bg-zinc-900 hover:text-zinc-100"
+            class="border-b border-gray-300 py-0 px-4 hover:bg-zinc-900 hover:text-zinc-100"
           >
-            <RouterLink to="/trabajos">
+            <RouterLink to="/trabajos" class="block py-2">
               <span class="text-md">Trabajos</span>
             </RouterLink>
           </li>
-          <li class="py-2 px-4 hover:bg-zinc-900 hover:text-zinc-100">
-            <RouterLink to="/contacto">
+          <li class="py-0 px-4 hover:bg-zinc-900 hover:text-zinc-100">
+            <RouterLink to="/contacto" class="block py-2">
               <span class="text-md">Contacto</span>
             </RouterLink>
           </li>
