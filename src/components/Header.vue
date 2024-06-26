@@ -1,11 +1,18 @@
 <script setup>
 import "boxicons";
+import { ref } from "vue";
 import { defineProps } from "vue";
 
 const props = defineProps({
   onToggleTheme: Function,
-  vestadoico: "String",
+  vestadoico: String,
 });
+
+const menuVisible = ref(false);
+
+const toggleMenu = () => {
+  menuVisible.value = !menuVisible.value;
+};
 </script>
 
 <template>
@@ -15,7 +22,7 @@ const props = defineProps({
       class="col-span-12 block p-4 sm:block md:hidden lg:hidden border-b border-gray-300"
     >
       <div class="grid grid-cols-12 gap-1">
-        <div class="col-span-2 flex items-center">
+        <div class="col-span-2 flex items-center" @click="toggleMenu">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="h-5 w-5"
@@ -31,7 +38,7 @@ const props = defineProps({
             />
           </svg>
         </div>
-        <div class="col-span-8 text-center text-2xl font-bold uppercase">
+        <div class="col-span-8 text-center text-2xl helvetica-bold">
           Omar Tejada
         </div>
         <div
@@ -46,6 +53,40 @@ const props = defineProps({
             class="p-1 cursor-pointer"
           ></box-icon>
         </div>
+      </div>
+      <!-- Menu desplegable -->
+      <div
+        v-if="menuVisible"
+        class="absolute left-0 right-0 bg-primary mt-2 border-t border-gray-300 z-50 shadow-md"
+      >
+        <ul>
+          <li
+            class="border-b border-gray-300 hover:bg-zinc-900 hover:text-zinc-100 py-2 px-4"
+          >
+            <RouterLink to="/">
+              <span class="text-md">Inicio</span>
+            </RouterLink>
+          </li>
+          <li
+            class="border-b border-gray-300 py-2 px-4 hover:bg-zinc-900 hover:text-zinc-100"
+          >
+            <RouterLink to="/acerca">
+              <span class="text-md">Acerca</span>
+            </RouterLink>
+          </li>
+          <li
+            class="border-b border-gray-300 py-2 px-4 hover:bg-zinc-900 hover:text-zinc-100"
+          >
+            <RouterLink to="/trabajos">
+              <span class="text-md">Trabajos</span>
+            </RouterLink>
+          </li>
+          <li class="py-2 px-4 hover:bg-zinc-900 hover:text-zinc-100">
+            <RouterLink to="/contacto">
+              <span class="text-md">Contacto</span>
+            </RouterLink>
+          </li>
+        </ul>
       </div>
     </div>
     <!-- fin menu movil -->
@@ -138,4 +179,6 @@ const props = defineProps({
   </div>
 </template>
 
-<style lang="css" scoped></style>
+<style scoped>
+/* Añade estilos adicionales si es necesario */
+</style>
