@@ -48,16 +48,17 @@ const props = defineProps({
         </div>
       </div>
     </div>
+    <!-- fin menu movil -->
 
     <!-- Column izquierda -->
     <div
       class="col-span-12 h-full content-center sm:col-span-12 md:col-span-9 px-6"
     >
       <div class="hidden py-2 text-lg sm:hidden md:block lg:block">
-        Lorem ipsum facto meruem facto
+        Diseñador UX/UI / Motion Designer
       </div>
       <div
-        class="hidden text-6xl font-bold sm:hidden md:block lg:block uppercase py-2 pb-5"
+        class="hidden text-7xl sm:hidden md:block lg:block py-2 pb-5 helvetica-bold"
       >
         Omar Tejada P.
       </div>
@@ -70,19 +71,19 @@ const props = defineProps({
                 <span class="text-md">Inicio</span>
               </RouterLink>
             </li>
-            <li class="flex self-center border-l border-black h-3"></li>
+            <li class="flex self-center border-l border-gray-500 h-3"></li>
             <li class="relative">
               <RouterLink to="/acerca">
                 <span class="text-md">Acerca</span>
               </RouterLink>
             </li>
-            <li class="flex self-center border-l border-black h-3"></li>
+            <li class="flex self-center border-l border-gray-500 h-3"></li>
             <li class="relative">
               <RouterLink to="/trabajos">
                 <span class="text-md">Trabajos</span>
               </RouterLink>
             </li>
-            <li class="flex self-center border-l border-black h-3"></li>
+            <li class="flex self-center border-l border-gray-500 h-3"></li>
             <li class="relative">
               <RouterLink to="/contacto">
                 <span class="text-md">Contacto</span>
@@ -111,7 +112,7 @@ const props = defineProps({
         <div
           class="col-span-4 flex sm:col-span-4 md:col-span-12 lg:justify-center md:justify-center"
         >
-          <div class="h-80 bg-gray-300 flex items-end p-4">
+          <div class="h-80 bg-neo-fondo-dark flex items-end p-4">
             <img
               class="w-60 h-60 object-cover"
               src="https://shorturl.at/Fokd1"
@@ -137,8 +138,4 @@ const props = defineProps({
   </div>
 </template>
 
-<style lang="css" scoped>
-.text-custom {
-  font-size: 19px;
-}
-</style>
+<style lang="css" scoped></style>
