@@ -1,0 +1,45 @@
+@font-face {
+  font-family: "helvetica";
+  src: url("../fonts/helvetica.ttf") format("ttf"),
+    url("../fonts/helvetica.woff2") format("woff2"),
+    url("../fonts/helvetica.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "helvetica-bold";
+  src: url("../fonts/helvetica-bold.ttf") format("ttf"),
+    url("../fonts/helvetica-bold.woff2") format("woff2"),
+    url("../fonts/helvetica-bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "helvetica-italic";
+  src: url("../fonts/helvetica-oblique.ttf") format("ttf"),
+    url("../fonts/helvetica-oblique.woff2") format("woff2"),
+    url("../fonts/helvetica-oblique.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: "helvetica-light";
+  src: url("../fonts/helvetica-light.ttf") format("ttf"),
+    url("../fonts/helvetica-light.woff2") format("woff2"),
+    url("../fonts/helvetica-light.woff") format("woff");
+  font-weight: thin;
+  font-style: normal;
+}
+
+.helvetica {
+  font-family: helvetica;
+}
+.helvetica-italic {
+  font-family: helvetica-italic;
+}
+.helvetica-bold {
+  font-family: helvetica-bold;
+}
+.helvetica-light {
+  font-family: helvetica-light;
+}
