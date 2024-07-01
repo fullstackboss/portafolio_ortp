@@ -6,6 +6,10 @@ const props = defineProps({
   vEventMode: {
     type: String,
   },
+  currentTheme: {
+    vEventMode: Function,
+    currentTheme: String,
+  },
 });
 </script>
 <template>
@@ -38,7 +42,7 @@ const props = defineProps({
           class="col-span-2 flex items-center justify-end"
           @click="props.onToggleTheme"
         >
-          <ModeButton />
+          <ModeButton :vEventMode2="vEventMode" />
         </div>
       </div>
     </div>
@@ -95,27 +99,40 @@ const props = defineProps({
     <div
       class="col-span-12 sm:col-span-12 md:col-span-3 md:p-0 px-0 lg:px-3 sm:px-0"
     >
-      <div class="grid grid-cols-12 lg:justify-center md:justify-center">
+      <div
+        class="grid grid-cols-12 lg:justify-center md:justify-center bg-header_bg-dark"
+      >
         <div
-          class="col-span-6 lg:col-span-12 md:col-span-12 sm:col-span-5 flex lg:justify-end md:justify-center bg-black lg:bg-transparent md:bg-black sm:bg-black"
+          class="col-span-6 lg:col-span-12 md:col-span-12 sm:col-span-5 flex lg:justify-end md:justify-center"
         >
           <!-- fotografia -->
-          <div class="h-64 lg:h-80 md:h-72 sm:h-64 bg-black flex items-end p-4">
-            <img
-              class="h-64 w-64 lg:h-72 md:h-68 sm:h-64 lg:w-68 md:w-68 sm:w-64 object-cover relative lg:static md:static sm:relative top-10"
-              src="@/assets/images/ortp.jpg"
-              alt=""
-            />
+          <div
+            class="h-64 lg:h-80 md:h-72 sm:h-64 bg-header_bg-dark flex items-end p-4"
+          >
+            <div v-if="currentTheme == 'light'">
+              <img
+                class="h-64 w-64 lg:h-72 md:h-68 sm:h-64 lg:w-68 md:w-68 sm:w-64 object-cover relative lg:static md:static sm:relative top-10"
+                src="@/assets/images/ortp.jpg"
+                alt=""
+              />
+            </div>
+            <div v-else>
+              <img
+                class="h-64 w-64 lg:h-72 md:h-68 sm:h-64 lg:w-68 md:w-68 sm:w-64 object-cover relative lg:static md:static sm:relative top-10"
+                src="@/assets/images/ortp-night.jpg"
+                alt=""
+              />
+            </div>
           </div>
         </div>
         <!-- texto -->
         <div
-          class="col-span-6 lg:col-span-8 md:col-span-6 sm:col-span-7 block h-full content-center p-5 sm:block md:hidden lg:hidden sm:bg-black bg-black text-white"
+          class="col-span-6 lg:col-span-8 md:col-span-6 sm:col-span-7 block h-full content-center p-5 sm:block md:hidden lg:hidden sm:bg-header_bg-dark bg-header_bg-dark text-white"
         >
           <div class="text-2xl font-semibold leading-6">
             Lorem ipsum facto meruem
           </div>
-          <div class="divider divider-neutral w-1/6"></div>
+          <div class="divider divider-primary w-1/6"></div>
           <div class="text-base font-light leading-5">
             Factoe is abvots meruem
           </div>

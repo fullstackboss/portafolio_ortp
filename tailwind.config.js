@@ -13,13 +13,17 @@ export default {
         custom: "1320px",
       },
       colors: {
-        primario_bn: {
-          light: "#ffffff",
+        gris_blanco: {
+          light: "#BBBBBB",
           dark: "#009900",
         },
-        primario: {
-          light: "#bd1714",
-          dark: "#000099",
+        negro_blanco: {
+          light: "#000000",
+          dark: "#ffffff",
+        },
+        header_bg: {
+          light: "#000000",
+          dark: "#000000",
         },
       },
     },
@@ -37,13 +41,13 @@ export default {
     themes: [
       {
         light: {
-          primary: "#bd1714",
-          secondary: "#9333ea",
-          accent: "#eab308",
+          primary: "#ffffff",
+          secondary: "#475569",
+          accent: "#000000",
           neutral: "#3d4451",
           "base-100": "#ffffff",
           "base-200": "#002200",
-          "base-300": "#344565",
+          "base-300": "#000000",
           info: "#3b82f6",
           success: "#16a34a",
           warning: "#f59e0b",
@@ -52,13 +56,13 @@ export default {
       },
       {
         dark: {
-          primary: "#990099",
-          secondary: "#909909",
-          accent: "#09ff00",
+          primary: "#252525",
+          secondary: "#373737",
+          accent: "#111111",
           neutral: "#1f2937",
           "base-100": "#000000",
-          "base-200": "#009900",
-          "base-300": "#990000",
+          "base-200": "#000099",
+          "base-300": "#ffffff",
           info: "#60a5fa",
           success: "#22c55e",
           warning: "#fbbf24",

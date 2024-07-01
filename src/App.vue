@@ -19,8 +19,8 @@ watchEffect(() => {
 
 <template>
   <div :data-theme="currentTheme">
-    <div class="max-w-custom mx-auto h-screen">
-      <MyHeader :vEventMode="toggleTheme" />
+    <div class="max-w-custom mx-auto">
+      <MyHeader :vEventMode="toggleTheme" :currentTheme="currentTheme" />
       <RouterView />
       <MyFooter />
     </div>
